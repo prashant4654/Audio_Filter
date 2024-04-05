@@ -13,8 +13,8 @@ def myfiltfilt(b, a, input_signal):
     Y = B*(1/A)*X
     return fft.ifft(Y).real
 
-#read .wav file 
-input_signal,fs = sf.read('Dhanush-Singing.wav') 
+#read .wav file
+input_signal,fs = sf.read('prashant.wav')
 print(len(input_signal))
 np.savetxt("in.txt", input_signal)
 
@@ -22,16 +22,16 @@ np.savetxt("in.txt", input_signal)
 sampl_freq=fs
 
 #order of the filter
-order=4   
+order=4
 
-#cutoff frquency 
-cutoff_freq=1000.0  
+#cutoff frquency
+cutoff_freq=1000.0
 
 #digital frequency
-Wn=2*cutoff_freq/sampl_freq  
+Wn=2*cutoff_freq/sampl_freq
 
 # b and a are numerator and denominator polynomials respectively
-b, a = signal.butter(order, Wn, 'low') 
+b, a = signal.butter(order, Wn, 'low')
 
 #filter the input signal with butterworth filter
 output_signal = signal.filtfilt(b, a, input_signal)

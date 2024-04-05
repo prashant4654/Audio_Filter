@@ -4,7 +4,7 @@ from scipy import signal
 import numpy as np
 
 #read .wav file 
-input_signal, fs = sf.read('Dhanush-Singing.wav') 
+input_signal, fs = sf.read('Dhanush-Singing.wav')
 
 #sampling frequency of Input signal
 sampl_freq = fs
@@ -14,7 +14,7 @@ print(sampl_freq)
 order = 4
 
 #cutoff frquency 
-cutoff_freq = 1000.0  
+cutoff_freq = 1000.0
 
 #digital frequency
 Wn = 2 * cutoff_freq / sampl_freq  
